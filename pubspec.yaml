@@ -1,0 +1,16 @@
+name: server_grcpc_2022
+description: A sample command-line application.
+version: 1.0.0
+publish_to: 'none'
+# homepage: https://www.example.com
+
+environment:
+  sdk: '>=2.17.5 <3.0.0'
+
+dependencies:
+  protobuf: ^2.1.0
+  grpc: ^3.0.2
+
+dev_dependencies:
+  lints: ^2.0.0
+  test: ^1.16.0
