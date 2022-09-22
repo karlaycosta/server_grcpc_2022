@@ -18,6 +18,10 @@ class ServerClient extends $grpc.Client {
       '/Server/connection',
       ($0.Msg value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Msg.fromBuffer(value));
+  static final _$prova = $grpc.ClientMethod<$0.Alunos, $0.Msg>(
+      '/Server/prova',
+      ($0.Alunos value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.Msg.fromBuffer(value));
 
   ServerClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -27,6 +31,11 @@ class ServerClient extends $grpc.Client {
   $grpc.ResponseStream<$0.Msg> connection($async.Stream<$0.Msg> request,
       {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$connection, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.Msg> prova($0.Alunos request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$prova, request, options: options);
   }
 }
 
@@ -41,10 +50,23 @@ abstract class ServerServiceBase extends $grpc.Service {
         true,
         ($core.List<$core.int> value) => $0.Msg.fromBuffer(value),
         ($0.Msg value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.Alunos, $0.Msg>(
+        'prova',
+        prova_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.Alunos.fromBuffer(value),
+        ($0.Msg value) => value.writeToBuffer()));
+  }
+
+  $async.Future<$0.Msg> prova_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.Alunos> request) async {
+    return prova(call, await request);
   }
 
   $async.Stream<$0.Msg> connection(
       $grpc.ServiceCall call, $async.Stream<$0.Msg> request);
+  $async.Future<$0.Msg> prova($grpc.ServiceCall call, $0.Alunos request);
 }
 
 class PeerClient extends $grpc.Client {

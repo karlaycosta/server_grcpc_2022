@@ -99,3 +99,78 @@ class Null extends $pb.GeneratedMessage {
   static Null? _defaultInstance;
 }
 
+class Alunos extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Alunos', createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'aluno1')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'aluno2')
+    ..a<$core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'codigo', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  Alunos._() : super();
+  factory Alunos({
+    $core.String? aluno1,
+    $core.String? aluno2,
+    $core.int? codigo,
+  }) {
+    final _result = create();
+    if (aluno1 != null) {
+      _result.aluno1 = aluno1;
+    }
+    if (aluno2 != null) {
+      _result.aluno2 = aluno2;
+    }
+    if (codigo != null) {
+      _result.codigo = codigo;
+    }
+    return _result;
+  }
+  factory Alunos.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Alunos.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Alunos clone() => Alunos()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Alunos copyWith(void Function(Alunos) updates) => super.copyWith((message) => updates(message as Alunos)) as Alunos; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static Alunos create() => Alunos._();
+  Alunos createEmptyInstance() => create();
+  static $pb.PbList<Alunos> createRepeated() => $pb.PbList<Alunos>();
+  @$core.pragma('dart2js:noInline')
+  static Alunos getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Alunos>(create);
+  static Alunos? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get aluno1 => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set aluno1($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAluno1() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAluno1() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get aluno2 => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set aluno2($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasAluno2() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAluno2() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get codigo => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set codigo($core.int v) { $_setSignedInt32(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasCodigo() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCodigo() => clearField(3);
+}
+
